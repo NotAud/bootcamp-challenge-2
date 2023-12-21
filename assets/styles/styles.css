@@ -1,3 +1,4 @@
+/* Setup useful and reusable variables for sizings and colors */
 :root {
     --dark: #06101a;
     --primary: #111d29;
@@ -10,6 +11,7 @@
     --spacing-lg: 40px;
 }
 
+/* Setup the documents expected general behavior / layout */
 * {
     font-family: sans-serif;
     color: var(--text-primary);
@@ -25,6 +27,12 @@ body {
     flex-direction: column;
 }
 
+/* Remove underline from links on page */
+a {
+    text-decoration: none;
+}
+
+/* Custom header sizes since reset removes these */
 h1 {
     font-size: 40px;
 }
@@ -42,6 +50,7 @@ header {
     justify-content: center;
 }
 
+/* Fixed navigation - Is indexed to stay above absoluted items */
 nav {
     background-color: var(--primary);
     padding: 14px var(--spacing-md);
@@ -51,10 +60,6 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 2;
-}
-
-nav > a {
-    text-decoration: none;;
 }
 
 nav > h1 {
@@ -67,10 +72,6 @@ nav > ul {
     list-style-type: none;
     align-items: center;
     font-size: 20px;
-}
-
-.nav-link {
-    text-decoration: none;
 }
 
 .nav-link:hover {
@@ -93,6 +94,7 @@ main {
     padding: var(--spacing-md) 100px;
 }
 
+/* Section cards - Contain a Header/Title and a Content - Can have 'stylized' arrow separating the two */
 .card {
     display: flex;
     flex-direction: column;
@@ -116,13 +118,14 @@ main {
     column-gap: 8px;
 }
 
+/* Creates floating arrow between card title and card content  */
 .card-arrow::before {
     content:"";
-    position: absolute;
     height: 0px;
     width: 0px;
     top: -28px;
-    left: var(--spacing-lg); /* 1px buffer for zooming problems while rendering*/
+    position: absolute;
+    left: var(--spacing-lg);
     border-width: 12px;
     border-color: transparent transparent var(--secondary) transparent;
     border-style: solid;
@@ -152,11 +155,13 @@ main {
     position: relative;
 }
 
+/* Target first portfolio item to fill the space */
 .portfolio-item:first-child {
     width: 100%;
     max-width: 100%;
 }
 
+/* Rest of the items will fill 50% of the space */
 .portfolio-item > h3, .portfolio-item > p {
     background-color: var(--secondary);
     padding: 8px var(--spacing-md);
@@ -180,6 +185,7 @@ main {
     transition: all 0.2s ease-in-out;
 }
 
+/* Wrap Contact Buttons until small mobile view */
 #contact-me > .card-text {
     flex-wrap: wrap;
     row-gap: var(--spacing-md);
@@ -207,6 +213,7 @@ footer {
     text-align: center;
 }
 
+/* Targets smaller screens and large tablets */
 @media (max-width: 1000px) {
     .card > .card-title {
         width: 100%;
@@ -221,6 +228,7 @@ footer {
     }
 }
 
+/* Tablet sizes - Cleans up some larger elements as things shrink */
 @media (max-width: 820px) {
     main {
         row-gap: var(--spacing-md);
@@ -241,6 +249,7 @@ footer {
     }
 }
 
+/* Small Tablets and Large phones */
 @media (max-width: 668px) {
     h1 {
         font-size: 32px;
@@ -255,6 +264,7 @@ footer {
     }
 }
 
+/* Large Phones - Some layout changes to maximize screen space */
 @media (max-width: 500px) {
     h1 {
         font-size: 24px;
@@ -282,6 +292,7 @@ footer {
     }
 }
 
+/* Very small screens - Helps push out smallest sizes by clipping header text in the nav and reducing gaps */
 @media (max-width: 380px) {
     nav > a {
         text-overflow: clip;
