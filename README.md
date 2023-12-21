@@ -16,7 +16,7 @@ Implements a mobile and desktop responsive page within the specifications given.
 
 [Live Deployment](https://notaud.github.io/bootcamp-challenge-2/)
 
-![Example Image of Page](https://imgur.com/IyKKVqp.png)
+![Example Image of Page](https://imgur.com/XBABByJ.png)
 
 ## License
 
