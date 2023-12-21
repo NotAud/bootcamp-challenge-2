@@ -5,6 +5,7 @@ Basic about me, with links to other live projects, and a place to contact me.
 ## Table of Contents
 
 - [Info](#info)
+- [Deployment](#deployed-page)
 - [License](#license)
 
 ## Info
