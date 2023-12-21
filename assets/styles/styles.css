@@ -1,0 +1,295 @@
+:root {
+    --dark: #06101a;
+    --primary: #111d29;
+    --secondary: #455c74;
+    --tertiary: #324d69;
+    --text-primary: #fff;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}
+
+* {
+    font-family: sans-serif;
+    color: var(--text-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    background-color: var(--primary);
+    padding: 14px var(--spacing-md);
+    border-bottom: 2px solid var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+nav > a {
+    text-decoration: none;;
+}
+
+nav > h1 {
+    cursor: default;
+}
+
+nav > ul {
+    display: flex;
+    column-gap: var(--spacing-md);
+    list-style-type: none;
+    align-items: center;
+    font-size: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--secondary);
+    transition: all 0.2s ease-in-out;
+}
+
+#avatar {
+    margin-top: 90px;
+    height: 300px;
+    border-radius: var(--radius-sm);
+    border: solid 2px var(--tertiary);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-lg);
+    flex-grow: 1;
+    padding: var(--spacing-md) 100px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-md);
+}
+
+.card > .card-title {
+    background-color: var(--secondary);
+    padding: var(--spacing-md) 80px;
+    width: fit-content;
+    border-radius: var(--radius-md);
+}
+
+.card-text {
+    margin-left: 70px;
+    background-color: var(--secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    position: relative;
+    display: flex;
+    column-gap: 8px;
+}
+
+.card-arrow::before {
+    content:"";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: -28px;
+    left: var(--spacing-lg); /* 1px buffer for zooming problems while rendering*/
+    border-width: 12px;
+    border-color: transparent transparent var(--secondary) transparent;
+    border-style: solid;
+}
+
+#portfolio {
+    row-gap: var(--spacing-md);
+    column-gap: var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.portfolio-item {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    flex-grow: 1;
+    max-width: calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    position: relative;
+}
+
+.portfolio-item:first-child {
+    width: 100%;
+    max-width: 100%;
+}
+
+.portfolio-item > h3, .portfolio-item > p {
+    background-color: var(--secondary);
+    padding: 8px var(--spacing-md);
+    width: fit-content;
+    border-top-left-radius: var(--radius-md);
+}
+
+.portfolio-item > p {
+    border-bottom-right-radius: var(--radius-sm);
+}
+
+.portfolio-item > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-item:hover > div {
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease-in-out;
+}
+
+#contact-me > .card-text {
+    flex-wrap: wrap;
+    row-gap: var(--spacing-md);
+}
+
+.contact-button {
+    padding: var(--spacing-md);
+    color: rgb(212, 232, 255);
+    font-size: 20px;
+    text-decoration: none;
+    width: fit-content;
+    background-color: var(--tertiary);
+    border-radius: var(--radius-md);
+}
+
+.contact-button:hover {
+    background-color: var(--primary);
+    transition: all 0.2s ease-in-out;
+}
+
+footer {
+    background-color: var(--primary);
+    padding: 14px;
+    border-top: 2px solid var(--secondary);
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .card > .card-title {
+        width: 100%;
+        text-align: center;
+    }
+    .card-text {
+        margin-left: 0px;
+    }
+
+    .card-arrow::before {
+        display: none;
+    }
+}
+
+@media (max-width: 820px) {
+    main {
+        row-gap: var(--spacing-md);
+    }
+
+    .portfolio-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #contact-me > .card-text {
+        flex-direction: column;
+    }
+
+    .contact-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 668px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    main {
+        padding: var(--spacing-md);
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #avatar {
+        margin-top: 70px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    main {
+        padding: 0px;
+    }
+
+    .card > .card-title, .card-text, .portfolio-item, .portfolio-item > p {
+        border-radius: 0px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+    
+    footer {
+        margin-top: var(--spacing-md);
+    }
+}
+
+@media (max-width: 380px) {
+    nav > a {
+        text-overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    nav > ul {
+        column-gap: 8px;
+    }
+}
